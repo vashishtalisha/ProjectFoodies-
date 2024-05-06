@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Food Ordering Site</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-question {
+            cursor: pointer;
+            padding: 10px;
+            background-color: #eee;
+            border: 1px solid #ddd;
+            margin-bottom: 5px;
+            border-radius: 5px;
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 5px;
+            background-color: #fff;
+        }
+        #search-box {
+            margin-top: 10px;
+            padding: 10px;
+        }
+        .faq-container {
+            transition: max-height 0.3s ease-out;
+        }
+
+        .faq-question:hover {
+            background-color: #ddd;
+        }
+        /* .faq-answer.show {
+            display: block;
+        } */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FAQ - Food Ordering Site</h1>
+    </header>
+
+    <div class="faq-container">
+        <div class="faq-question" onclick="toggleAnswer(1)">How do I place an order?</div>
+        <div class="faq-answer" id="answer1">To place an order, simply browse our menu, select the items you want, and proceed to checkout. Follow the instructions to complete your order.</div>
+
+        <div class="faq-question" onclick="toggleAnswer(2)">Can I modify my order after placing it?</div>
+        <div class="faq-answer" id="answer2">Once an order is placed, modifications are not allowed. Please double-check your order before confirming.</div>
+
+        <div class="faq-question" onclick="toggleAnswer(3)">How can I track my order?</div>
+        <div class="faq-answer" id="answer3">Once your order is confirmed, you will receive a tracking link via email or SMS. You can use that link to track the status of your order in real-time.</div>
+
+        <!-- Additional Questions -->
+        <div class="faq-question" onclick="toggleAnswer(4)">Is there a minimum order amount?</div>
+        <div class="faq-answer" id="answer4">Yes, we have a minimum order amount requirement. Please check the details on our website or app.</div>
+
+        <div class="faq-question" onclick="toggleAnswer(5)">What payment methods do you accept?</div>
+        <div class="faq-answer" id="answer5">We accept various payment methods, including credit cards, debit cards, and online payment services. Check our payment options during checkout.</div>
+
+        <div class="faq-question" onclick="toggleAnswer(6)">Can I cancel my order?</div>
+        <div class="faq-answer" id="answer6">Cancellation policies vary. You can review our cancellation policy on the checkout page before confirming your order.</div>
+
+        <div class="faq-question" onclick="toggleAnswer(7)">Are there delivery charges?</div>
+        <div class="faq-answer" id="answer7">Delivery charges may apply and are calculated based on your delivery location. Check the delivery charges during the checkout process.</div>
+
+        <div class="faq-question" onclick="toggleAnswer(8)">Do you offer catering services?</div>
+        <div class="faq-answer" id="answer8">Yes, we offer catering services for events and gatherings. Contact our customer support for more details and customization options.</div>
+
+        <div class="faq-question" onclick="toggleAnswer(9)">How do I provide feedback on my order?</div>
+        <div class="faq-answer" id="answer9">We value your feedback. You can provide feedback through our website, app, or by contacting our customer support team.</div>
+
+        <div class="faq-question" onclick="toggleAnswer(10)">Do you have vegetarian and vegan options?</div>
+        <div class="faq-answer" id="answer10">Yes, we offer a variety of vegetarian and vegan options. You can find them labeled on our menu.</div>
+
+        <div class="faq-question" onclick="toggleAnswer(11)">How do I create an account?</div>
+        <div class="faq-answer" id="answer11">To create an account, click on the "Sign Up" or "Register" link on our website or app. Follow the instructions to provide the required information and create your account.</div>
+
+        <div class="faq-question" onclick="toggleAnswer(12)">What should I do if I have allergies?</div>
+        <div class="faq-answer" id="answer12">If you have allergies, please check the allergen information provided with each menu item. Additionally, you can contact our customer support for assistance.</div>
+    </div>
+    <div id="search-box">
+        <label for="search-input">Search: </label>
+        <input type="text" id="search-input" oninput="searchQuestions()">
+    </div>
+
+    <button onclick="scrollToTop()" id="scroll-to-top-btn">Scroll to Top</button>
+    <script>
+        
+        function toggleAnswer(id) {
+            var answer = document.getElementById('answer' + id);
+            var question = document.getElementsByClassName('faq-question')[id - 1];
+
+            // Toggle accordion style
+            if (answer.style.maxHeight) {
+                answer.style.maxHeight = null;
+            } else {
+                answer.style.maxHeight = answer.scrollHeight + "px";
+            }
+
+            // Highlight selected question
+            question.classList.toggle('active');
+
+            // Toggle the "show" class to ensure the answer is visible
+            answer.classList.toggle('show');
+        }
+
+       
+        // function showInitialAnswers() {
+        //     var answers = document.querySelectorAll('.faq-answer');
+        //     answers.forEach(function(answer) {
+        //         answer.classList.add('show');
+        //     });
+        
+
+        // Call the function when the page loads
+        window.onload = showInitialAnswers;
+
+
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        function searchQuestions() {
+            var input, filter, questions, i, txtValue;
+            input = document.getElementById('search-input');
+            filter = input.value.toUpperCase();
+            questions = document.getElementsByClassName('faq-question');
+
+            for (i = 0; i < questions.length; i++) {
+                txtValue = questions[i].textContent || questions[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    questions[i].style.display = "";
+                } else {
+                    questions[i].style.display = "none";
+                }
+            }
+        }
+
+        window.onscroll = function() {
+            var btn = document.getElementById('scroll-to-top-btn');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                btn.style.display = 'block';
+            } else {
+                btn.style.display = 'none';
+            }
+        };
+    </script>
+
+
+    
+</body>
+</html>

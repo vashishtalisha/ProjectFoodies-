@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    
+    <!-- Include necessary styles from the menu page -->
+    <style>
+        /* Copy relevant styles from the menu page */
+        .navbar {
+            position: relative;
+            width: 100%;
+        }
+
+        .navbar::before {
+            /* ... */
+        }
+
+        .navbar ul {
+            /* ... */
+        }
+
+        /* ... more styles ... */
+
+        .Cart {
+            position: fixed;
+            top: 0;
+            left: 100%;
+            width: 500px;
+            background-color: #453E3B;
+            height: 100vh;
+            transition: 0.5s;
+        }
+
+        .active .Cart {
+            left: calc(100% - 500px);
+        }
+
+        .active .container {
+            transform: translateX(-200px);
+        }
+
+        .Cart h1 {
+            color: #E8BC0E;
+            font-weight: 100;
+            margin: 0;
+            padding: 0 20px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* ... more cart-related styles ... */
+    </style>
+</head>
+<body>
+    <!-- Your existing cart-related content -->
+    <div class="Cart">
+        <h1>Cart</h1>
+        <ul class="listCart">
+            <!-- Cart items will be dynamically added here -->
+        </ul>
+        <div class="checkOut">
+            <div class="total">0</div>
+            <div class="closeShopping">Close</div>
+            <div class="checkoutButton">
+                <a href="payment.html">CHECKOUT</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Your existing JavaScript code related to the cart
+    </script>
+</body>
+</html>

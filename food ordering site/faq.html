@@ -1,0 +1,195 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="icon" type="image*icon" href="ch1.png">
+    <style>.faq-heading {
+        font-family: Lato;   
+        font-weight: 400;
+        font-size: 19px;
+        transition: text-indent 0.2s;
+        text-indent: 20px;
+        color: white;
+      }
+      
+      .faq-text {
+        font-family: Open Sans;   
+        font-weight: 400;
+        color: white;
+        width:95%;
+        padding-left:20px;
+        margin-bottom:30px;
+      }
+      .cover
+      {
+          background: linear-gradient(109.6deg, rgb(0, 37, 84) 11.2%, rgba(0, 37, 84, 0.32) 100.2%);  
+      }
+      
+      .faq {
+        width: 1000px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 4px;
+        position: relative;
+        border: 1px solid #E1E1E1;
+      }
+      .faq label {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        height: 56px;
+        padding-top:1px;
+        background-color: #FAFAFA;
+        border-bottom: 1px solid #E1E1E1;
+        background:linear-gradient(109.6deg, rgb(0, 37, 84) 11.2%, rgba(0, 37, 84, 0.32) 100.2%);
+      }
+      
+      .faq input[type="checkbox"] {
+        display: none;
+      }
+      
+      .faq .faq-arrow {
+        width: 5px;
+        height: 5px;
+        transition: transform 0.8s;
+        transition: transform 0.8s;
+        transition: transform 0.8s, transform 0.8s;
+        transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        border-top: 2px solid white;
+        border-right: 2px solid white;
+        float: right;
+        position: relative;
+        top: -30px;
+        right: 27px;
+        -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+      }
+      
+       .faq input[type="checkbox"]:checked + label > .faq-arrow {
+        transition: transform 0.8s;
+        transition: transform 0.8s;
+        transition: transform 0.8s, transform 0.8s;
+        transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        -webkit-transform: rotate(135deg);
+                transform: rotate(135deg);
+      }
+       .faq input[type="checkbox"]:checked + label {
+        display: block;
+        background: linear-gradient(109.6deg, rgb(0, 37, 84) 11.2%, rgba(0, 37, 84, 0.32) 100.2%);
+        color: #4f7351;
+        height: 225px;
+        transition: height 0.8s;
+        transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      }
+      
+       .faq input[type='checkbox']:not(:checked) + label {
+        display: block;
+        transition: height 0.8s;
+        height: 60px;
+        transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      }
+      
+      ::-webkit-scrollbar {
+        display: none;
+      }
+      /* Media query for responsiveness */
+      @media screen and (max-width: 768px) {
+        .faq {
+          width: 90%; /* Adjust width for smaller screens */
+          margin: 0 auto;
+        }
+      
+        .faq label {
+          height: 50px; /* Adjust label height for smaller screens */
+        }
+      
+        .faq .faq-arrow {
+          right: 20px; /* Adjust arrow position for smaller screens */
+        }
+      
+        .faq input[type='checkbox']:not(:checked) + label {
+          height: 50px; /* Adjust label height for smaller screens */
+        }
+      
+        .faq input[type="checkbox"]:checked + label {
+          height: auto; /* Let the expanded section have auto height */
+        }
+      
+        .faq-text {
+          padding-left: 10px; /* Adjust padding for text */
+          margin-bottom: 20px; /* Adjust margin for text */
+        }
+      }</style>
+</head>
+<body>
+    <div class="cover">
+    <div class='faq'>
+        <input id='faq-a' type='checkbox'>
+        <label for='faq-a'>
+          <p class="faq-heading"> HOW DO I FIGURE OUT WHAT TO LEARN?</p>
+          <div class='faq-arrow'></div>
+            <p class="faq-text">The most important thing is that you want to learn something that interests you, because once you start learning, you'll be with this topic for a while.</p>
+        </label>
+        <input id='faq-b' type='checkbox'>
+        <label for='faq-b'>
+          <p class="faq-heading"> WHICH PROGRAMMING LANGUAGE IS THE BEST TO LEARN?</p>
+          <div class='faq-arrow'></div>
+         <p class="faq-text">I usually tell most people to start by learning HTML and CSS, then move into learning JavaScript. The reason is that JavaScript is used everywhere: frontend, backend, and even to build mobile apps. It has many use cases, which is why I think it's smart to learn.</p>
+        </label>
+        <input id='faq-c' type='checkbox'>
+        <label for='faq-c'>
+          <p class="faq-heading">IS IT POSSIBLE TO DO BOTH GRAPHIC DESIGN AND CODING?</p>
+          <div class='faq-arrow'></div>
+            <p class="faq-text">If you have an interest in coding and graphic design, then there's nothing to say you shouldn't learn skills in both areas. They often work hand-in-hand, so having knowledge and skills in both areas could be desirable for certain career paths.</p>
+        </label>
+        <input id='faq-d' type='checkbox'>
+        <label for='faq-d'>
+          <p class="faq-heading"> SHOULD I LEARN SKILLS IN SEVERAL AREAS, OR FOCUS ON ONE THING IN PARTICULAR?</p>
+          <div class='faq-arrow'></div>
+            <p class="faq-text">Personally, I'd say choose a path and stick to it! Learning too many things at once will slow you down. Here are a few ideas of things you can choose to focus on, and a little bit about each one.Example-Data Science,Data Analysis,Ruby on Rails,UX etc.</p>
+        </label>
+        <input id='faq-e' type='checkbox'>
+        <label for='faq-e'>
+          <p class="faq-heading">WHAT'S THE FASTEST WAY/SHORTCUTS TO LEARN TO CODE?</p>
+          <div class='faq-arrow'></div>
+            <p class="faq-text">To be a good programmer, there are no shortcuts. That is not the right way to think about it.<br>
+                Instead, you should take time mastering the fundamentals. This will help you in the long run.</p>
+        </label>
+        <input id='faq-f' type='checkbox'>
+        <label for='faq-f'>
+          <p class="faq-heading">I'M STRUGGLING.HOW DO YOU STAY MOTIVATED?</p>
+          <div class='faq-arrow'></div>
+            <p class="faq-text">Remember everyone has to start somewhere. Oftentimes, people can be very hard on themselves when starting to learn anything new, especially coding. Just know that everyone has been in the same boat at some point, and you're not alone.</p>
+        </label>
+        <input id='faq-g' type='checkbox'>
+        <label for='faq-g'>
+          <p class="faq-heading">AM I TOO OLD TO LEARN TO CODE OR CONSIDER A CAREER IN TECH?</p>
+          <div class='faq-arrow'></div>
+         <p class="faq-text">You're not too old. I speak to people all the time learning in their 30s, 40s, 50s and beyond.</p>
+        </label>
+        <input id='faq-h' type='checkbox'>
+        <label for='faq-h'>
+          <p class="faq-heading">HOW CAN I BUILD MY CONFIDENCE?</p>
+          <div class='faq-arrow'></div>
+            <p class="faq-text">Learning to code can be quite a lonely thing if you're doing it on your own, and if you don't have someone there for pep talks, your confidence might fall. We've all experienced moments of doubts, and that's OK.</p>
+        </label>
+        <input id='faq-i' type='checkbox'>
+        <label for='faq-i'>
+          <p class="faq-heading"> I'M WORRIED ABOUT PICKING THE RIGHT PATH. HOW CAN I MAKE SURE I DON'T?</p>
+          <div class='faq-arrow'></div>
+            <p class="faq-text">You don't have to stop learning when you finish college! There are many more opportunities for growth, taking courses, learning through a job, and more, so even if you do decide to follow a different path at first, the option to change it up and try something new is always there if you're willing to put the work in.</p>
+        </label>
+        <input id='faq-j' type='checkbox'>
+        <label for='faq-j'>
+          <p class="faq-heading">HOW DO I CHANGE MY CAREER?</p>
+          <div class='faq-arrow'></div>
+            <p class="faq-text">If you're worried that changing careers won't be possible, think again. So many people have done it successfully and haven't looked back! One tip is to leverage the skills you already have and combine them with your new tech skills.</p>
+        </label>
+         </div>
+    </div>
+</body>
+</html>
